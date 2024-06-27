@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>html学习——基础</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./html_1.html">html学习</a></li>
+                        <li><a href="../css_page/css_1.html">css学习</a></li>
+                        <li><a href="../javascript_page/javascript_1.html">javascript学习</a></li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>基本的 HTML 标签</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <p>
+                        在本章中我们将展示一些基本的 HTML 示例。<br>
+                        如果我们使用了您还不了解的标签，请不要担心。
+                </p>
+                <hr>
+                <h2>HTML 文档</h2>
+                <p>
+                        所有 HTML 文档都必须以文档类型声明开头：<code>&lt;!DOCTYPE html&gt;</code>。<br>
+                        HTML 文档本身以 <code>&lt;html&gt;</code> 开头，以 <code>&lt;/html&gt;</code> 结尾。<br>
+                        HTML 文档的可见部分位于 <code>&lt;body&gt;</code> 和 <code>&lt;/body&gt;</code> 之间。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <hr>
+                <h2>HTML 标题</h2>
+                <p>
+                        HTML 标题（Heading）是通过 <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code> 等标签进行定义的。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code2" name="show_code2" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+<h4>This is heading 4</h4>
+<h5>This is heading 5</h5>
+<h6>This is heading 6</h6>
+
+</body>
+</html></textarea>
+                <button id="open_editor2">查看示例</button>
+                <hr>
+                <h2>HTML 段落</h2>
+                <p>
+                        HTML 段落是通过 <code>&lt;p&gt;</code> 标签进行定义的。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code3" name="show_code3" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor3">查看示例</button>
+                <hr>
+                <h2>HTML 链接</h2>
+                <p>
+                        HTML 链接是通过 <code>&lt;a&gt;</code> 标签进行定义的。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code4" name="show_code4" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Links</h2>
+<p>HTML links are defined with the a tag:</p>
+
+<a href="../index.html">This is a link</a>
+
+</body>
+</html></textarea>
+                <button id="open_editor4">查看示例</button>
+        </article>
+</body>
+
+</html>

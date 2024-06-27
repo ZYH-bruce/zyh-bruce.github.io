@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>代码运行</title>
+        <link rel="stylesheet" href="../css/body.css" />
+        <link rel="stylesheet" href="../css/header.css" />
+        <script src="../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../codemirror-5.65.16/addon/fold/foldgutter.css" />
+        <script src="../codemirror-5.65.16/addon/fold/foldcode.js"></script>
+        <script src="../codemirror-5.65.16/addon/fold/foldgutter.js"></script>
+        <script src="../codemirror-5.65.16/addon/fold/brace-fold.js"></script>
+        <script src="../codemirror-5.65.16/addon/fold/comment-fold.js"></script>
+        <style>
+                .CodeMirror * {
+                        font-family: Consolas, monospace;
+                        font-size: 20px;
+                }
+
+                #text_area_code,
+                #code_area_output {
+                        display: inline-block;
+                        width: 49%;
+                }
+        </style>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../index.html">主页</a></li>
+                        <li><a href="./html_page/html_1.html">html学习</a></li>
+                        <li><a href="./css_page/css_1.html">css学习</a></li>
+                        <li><a href="./javascript_page/javascript_1.html">javascript学习</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <div id="text_area_code">
+                        <h2 style="display: inline;">代码编辑区</h2>
+                        <button onclick="run_code()">Run</button>
+                        <textarea id="code" name="code" autocomplete="off"></textarea>
+                </div>
+                <div id="code_area_output">
+                        <h2 style="display: inline;">效果显示区</h2>
+                        <iframe id="output" width="100%" height="800px"></iframe>
+                </div>
+        </article>
+
+        <script>
+                const example_content = localStorage.getItem('example_content');
+                if (example_content) {
+                        document.getElementById('code').value = example_content;
+                        localStorage.removeItem('example_content');
+                }
+                var mixed_mode = {
+                        name: "htmlmixed",
+                        scriptTypes: [{
+                                matches: /\/x-handlebars-template|\/x-mustache/i,
+                                mode: null
+                        },
+                        {
+                                matches: /(text|application)\/(x-)?vb(a|script)/i,
+                                mode: "vbscript"
+                        }]
+                };
+                var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                        mode: mixed_mode,
+                        theme: "material-darker",
+                        lineNumbers: true,
+                        selectionPointer: true,
+                        lineWrapping: true,
+                        foldGutter: true,
+                        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+                        matchBrackets: true,
+                });
+                editor.setSize('100%', "800px")
+                function run_code() {
+                        const edit_code = editor.getValue();
+                        const iframe = document.getElementById('output');
+                        iframe.contentDocument.open();
+                        iframe.contentDocument.write(edit_code);
+                        iframe.contentDocument.close();
+                }
+        </script>
+</body>
+
+</html>

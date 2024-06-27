@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>javascript学习——使用</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li><a href="../html_page/html_1.html">html学习</a></li>
+                        <li><a href="../css_page/css_1.html">css学习</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./javascript_1.html">javascript学习</a></li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>JavaScript 使用</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <h2><code>&lt;script&gt;</code> 标签</h2>
+                <p>
+                        在 HTML 中，JavaScript 代码必须位于 <code>&lt;script&gt;</code> 与 <code>&lt;/script&gt;</code> 标签之间。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript in Body</h2>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "My First JavaScript";
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <hr>
+                <h2>JavaScript 函数和事件</h2>
+                <p>
+                        JavaScriptfunction是一段 JavaScript 代码，可以在“调用”时执行。<br>
+                        例如，当发生事件时（如用户单击按钮时），可以调用一个函数。
+                </p>
+                <hr>
+                <h2><code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 中的 JavaScript</h2>
+                <p>
+                        您可以在 HTML 文档中放置任意数量的脚本。<br>
+                        脚本可以放置在HTML 页面的 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 部分中，或者两者中。
+                </p>
+                <hr>
+                <h2><code>&lt;head&gt;</code> 中的 JavaScript</h2>
+                <p>
+                        在此示例中，JavaScript <code>function</code>被放置在 <code>&lt;head&gt;</code> 的部分中。<br>
+                        当单击按钮时，将调用该函数：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code2" name="show_code2" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+</head>
+<body>
+
+<h2>Demo JavaScript in Head</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+</html></textarea>
+                <button id="open_editor2">查看示例</button>
+                <hr>
+                <h2><code>&lt;body&gt;</code> 中的 JavaScript</h2>
+                <p>
+                        在此示例中，JavaScript <code>function</code>被放置在 <code>&lt;body&gt;</code> 的部分中。<br>
+                        当单击按钮时，将调用该函数：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code3" name="show_code3" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo JavaScript in Body</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor3">查看示例</button>
+                <hr>
+                <h2>外部 JavaScript</h2>
+                <p>
+                        脚本也可以放在外部文件中<br>
+                        当在许多不同的网页中使用相同的代码时，外部脚本非常实用。<br>
+                        JavaScript 文件的文件扩展名是.js。<br>
+                        要使用外部脚本，请将脚本文件的名称放在标签src的（源）属性中<code>&lt;script&gt;</code>：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code4" name="show_code4" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo External JavaScript</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<p>This example links to "myScript.js".</p>
+<p>(myFunction is stored in "myScript.js")</p>
+
+<script src="myScript.js"></script>
+
+</body>
+</html></textarea>
+                <button id="open_editor4">查看示例</button>
+                <hr>
+                <h2>外部 JavaScript 的优势</h2>
+                <p>
+                        外部 JavaScript 的优势<br>
+                        在外部文件中放置脚本有如下优势：
+                        <ul>
+                                <li>分离了 HTML 和代码</li>
+                                <li>使 HTML 和 JavaScript 更易于阅读和维护</li>
+                                <li>已缓存的 JavaScript 文件可加速页面加载</li>
+                        </ul>
+                        如需向一张页面添加多个脚本文件 - 请使用多个 script 标签：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code5" name="show_code5" autocomplete="off">
+<script src="myScript1.js"></script>
+<script src="myScript2.js"></script></textarea>
+        </article>
+</body>
+
+</html>

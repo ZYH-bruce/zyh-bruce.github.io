@@ -1,0 +1,32 @@
+body {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        background: url("../imag/background.webp") no-repeat top center fixed;
+        background-size: cover;
+        min-width: 1536px;
+        font-family: 'Arial', sans-serif;
+        color: rgb(68, 68, 68);
+}
+
+#main {
+        background-color: rgba(255, 255, 255, 0.75);
+        padding: 12px;
+        border: 0.8px solid rgba(255, 255, 255, 0.75);
+        border-radius: 5px;
+        box-shadow: 0 0 10px #000;
+        border-color: transparent;
+        font-size: 25px;
+        width: 1300px;
+        margin: 70px auto;
+}
+
+#main>h1 {
+        text-align:center
+}
+
+#main code {
+        font-family: Consolas, monospace;
+        color: crimson;
+        background-color: lightgrey;
+}

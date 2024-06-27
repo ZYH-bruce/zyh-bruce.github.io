@@ -1,0 +1,25 @@
+.tutorial_navigation {
+        text-align: center;
+        margin: 20px 0;
+}
+
+.tutorial_navigation a {
+        text-decoration: none;
+        color: #fff;
+        background-color: gray;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 0 10px;
+}
+
+.tutorial_navigation a.previous {
+        background-color: blue;
+}
+
+.tutorial_navigation a.next {
+        background-color: green;
+}
+
+.tutorial_navigation a:hover {
+        opacity: 0.8;
+}

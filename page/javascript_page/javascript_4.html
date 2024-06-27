@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>javascript学习——变量</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li><a href="../html_page/html_1.html">html学习</a></li>
+                        <li><a href="../css_page/css_1.html">css学习</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./javascript_1.html">javascript学习</a></li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>JavaScript 变量</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <h2>JavaScript 变量</h2>
+                <p>
+                        JavaScript 变量是存储数据值的容器。<br>
+                        在本例中，x、y 和 z 是变量：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Variables</h1>
+
+<p>In this example, x, y, and z are undeclared.</p>
+<p>They are automatically declared when first used.</p>
+
+<p id="demo"></p>
+
+<script>
+x = 5;
+y = 6;
+z = x + y;
+document.getElementById("demo").innerHTML =
+"The value of z is: " + z;
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <hr>
+                <h2>分号；</h2>
+                <p>
+                        分号分隔 JavaScript 语句。<br>
+                        请在每条可执行的语句之后添加分号：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code2" name="show_code2" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Statements</h2>
+
+<p>JavaScript statements are separated by semicolons.</p>
+
+<p id="demo1"></p>
+
+<script>
+let a, b, c;
+a = 5;
+b = 6;
+c = a + b;
+document.getElementById("demo1").innerHTML = c;
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor2">查看示例</button>
+                <p>
+                        从上例中，您可获得：<br>
+                        <ul>
+                                <li>x 存储值 7</li>
+                                <li>y 存储值 8</li>
+                                <li>z 存储值 15</li>
+                        </ul>
+                </p>
+                <hr>
+                <h2>JavaScript 数据类型</h2>
+                <p>
+                        JavaScript 变量可存放数值，比如 100，以及文本值，比如 "John Doe"。<br>
+                        在编程中，文本值被称为字符串。<br>
+                        JavaScript 可处理多种数据类型，但是现在，我们只关注数值和字符串值。<br>
+                        字符串被包围在双引号或单引号中。数值不用引号。<br>
+                        如果把数值放在引号中，会被视作文本字符串。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code3" name="show_code3" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Variables</h1>
+
+<p>Strings are written with quotes.</p>
+<p>Numbers are written without quotes.</p>
+
+<p id="demo"></p>
+
+<script>
+const pi = 3.14;
+let person = "John Doe";
+let answer = 'Yes I am!';
+
+document.getElementById("demo").innerHTML =
+pi + "<br>" + person + "<br>" + answer;
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor3">查看示例</button>
+                <hr>
+                <h2>声明 JavaScript 变量</h2>
+                <p>
+                        在 JavaScript 中创建变量称为“声明”变量。<br>
+                        <br>
+                        你可以用var或者let关键字声明一个 JavaScript 变量：<br>
+                        <code>var carName;</code><br>
+                        或者：<br>
+                        <code>let carName;</code><br>
+                        <br>
+                        声明之后，该变量没有值（技术上来说是未定义）。<br>
+                        <br>
+                        要给变量赋值，请使用等号：<br>
+                        <code>carName = "Volvo";</code><br>
+                        您还可以在声明变量时为其赋值：<br>
+                        <code>let carName = "Volvo";</code><br>
+                        <br>
+                        在下面的例子中，我们创建一个名为的变量carName并为其分配值“Volvo”。<br>
+                        然后我们在 id="demo" 的 HTML 段落中“输出”该值：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code4" name="show_code4" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Variables</h1>
+
+<p>Create a variable, assign a value to it, and display it:</p>
+
+<p id="demo"></p>
+
+<script>
+let carName = "Volvo";
+document.getElementById("demo").innerHTML = carName;
+</script>
+
+</body>
+</html></textarea>
+        <button id="open_editor4">查看示例</button>
+                <hr>
+                <h2>JavaScript 算术</h2>
+                <p>
+                        您能够通过 JavaScript 变量进行算术运算，使用 = 和 + 之类的运算符：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code5" name="show_code5" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Variables</h1>
+
+<p>The result of adding 5 + 2 + 3 is:</p>
+<p id="demo1"></p>
+
+<p>The result of adding "John" + " " + "Doe" is:</p>
+<p id="demo2"></p>
+
+<p>The result of adding "5" + 2 + 3 is:</p>
+<p id="demo3"></p>
+<script>
+let x = 5 + 2 + 3;
+document.getElementById("demo1").innerHTML = x;
+
+let y = "John" + " " + "Doe";
+document.getElementById("demo2").innerHTML = y;
+
+let z = "5" + 2 + 3;
+document.getElementById("demo3").innerHTML = z;
+</script>
+
+</body>
+</html></textarea>
+        <button id="open_editor5">查看示例</button>
+        </article>
+</body>
+
+</html>

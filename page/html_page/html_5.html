@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>html学习——段落</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./html_1.html">html学习</a></li>
+                        <li><a href="../css_page/css_1.html">css学习</a></li>
+                        <li><a href="../javascript_page/javascript_1.html">javascript学习</a></li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>HTML 段落</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <p>
+                        段落总是从新行开始，并且通常是一块文本。 
+                </p>
+                <hr>
+                <h2>HTML 段落</h2>
+                <p>
+                        HTML <code>&lt;p&gt;</code> 元素定义一个段落。<br>
+                        段落总是从新行开始，并且浏览器会自动在段落前后添加一些空白（边距）。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <hr>
+                <h2>HTML 显示</h2>
+                <p>
+                        您无法确定 HTML 将如何显示。<br>
+                        大屏幕或小屏幕以及调整大小的窗口将产生不同的结果。<br>
+                        在 HTML，您不能通过在 HTML 代码中添加额外的空格或额外的行来更改显示。<br>
+                        当页面显示时，浏览器会自动删除任何多余的空格和行：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code2" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>
+This paragraph
+contains a lot of lines
+in the source code,
+but the browser 
+ignores it.
+</p>
+
+<p>
+This paragraph
+contains      a lot of spaces
+in the source     code,
+but the    browser 
+ignores it.
+</p>
+
+<p>
+The number of lines in a paragraph depends on the size of the browser window. If you resize the browser window, the number of lines in this paragraph will change.
+</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor2">查看示例</button>
+                <hr>
+                <h2>HTML 换行符</h2>
+                <p>
+                        <code>&lt;br&gt;</code> 元素定义换行符。
+                        如果您想要换行（新行）而不开始新段落，请使用 <code>&lt;br&gt;</code> ：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code3" name="show_code3" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This is<br>a paragraph<br>with line breaks.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor3">查看示例</button>
+        </article>
+</body>
+
+</html>

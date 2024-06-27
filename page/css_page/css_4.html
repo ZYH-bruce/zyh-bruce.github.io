@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>css学习——使用</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li><a href="../html_page/html_1.html">html学习</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./css_1.html">css学习</a></li>
+                        <li><a href="../javascript_page/javascript_1.html">javascript学习</a></li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>如何添加 CSS</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <p>
+                        当浏览器读到样式表时，它将根据样式表中的信息来格式化 HTML 文档。
+                </p>
+                <hr>
+                <h2>三种使用 CSS 的方法</h2>
+                <p>
+                        有三种插入样式表的方法：
+                        <ul>
+                                <li>外部 CSS</li>
+                                <li>内部 CSS</li>
+                                <li>行内 CSS</li>
+                        </ul>
+                </p>
+                <hr>
+                <h2>外部 CSS</h2>
+                <p>
+                        通过使用外部样式表，您只需修改一个文件即可改变整个网站的外观！<br>
+                        每张 HTML 页面必须在 head 部分的 <code>&lt;link&gt;</code> 元素内包含对外部样式表文件的引用。<br>
+                        <br>
+                        下面的例子展示了外部样式在 HTML 页面 <code>&lt;head&gt;</code> 部分内的 <code>&lt;link&gt;</code> 元素中进行定义：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <p>
+                        外部样式表可以在任何文本编辑器中编写，并且必须以 .css 扩展名保存。<br>
+                        外部.css 文件不应包含任何 HTML 标签。<br>
+                        “mystyle.css”文件的样子如下：
+                </p>
+                <textarea id="show_code2" name="show_code2" autocomplete="off">
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}</textarea>
+                <hr>
+                <h2>内部 CSS</h2>
+                <p>
+                        如果单个 HTML 页面具有独特的样式，则可以使用内部样式表。<br>
+                        内部样式在 <code>&lt;style&gt;</code> 元素的头部部分内定义。<br>
+                        <br>
+                        下面的例子展示了内部样式在 HTML 页面的 <code>&lt;head&gt;</code> 部分内的 <code>&lt;style&gt;</code> 元素中定义：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code3" name="show_code3" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: linen;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+} 
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor3">查看示例</button>
+                <hr>
+                <h2>行内 CSS</h2>
+                <p>
+                        行内样式（也称内联样式）可用于为单个元素应用唯一的样式。<br>
+                        如需使用行内样式，请将 style 属性添加到相关元素。style 属性可包含任何 CSS 属性。<br>
+                        <br>
+                        下面的例子展示了行内样式在相关元素的 "style" 属性中定义：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code4" name="show_code4" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 style="color:blue;text-align:center;">This is a heading</h1>
+<p style="color:red;">This is a paragraph.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor4">查看示例</button>
+        </article>
+</body>
+
+</html>

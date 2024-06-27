@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>html学习——标题</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./html_1.html">html学习</a></li>
+                        <li><a href="../css_page/css_1.html">css学习</a></li>
+                        <li><a href="../javascript_page/javascript_1.html">javascript学习</a></li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>HTML 标题</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <p>
+                        HTML 标题是您想要在网页上显示的标题或副标题。
+                </p>
+                <hr>
+                <h2>HTML 标题</h2>
+                <p>
+                        标题（Heading）是通过 <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code> 等标签进行定义的。
+                        <code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <hr>
+                <h2>更大的标题</h2>
+                <p>
+                        每个 HTML 标题都有默认大小。但是，您可以通过 <code>style</code> 的 <code>font-size</code> 属性指定任何标题的大小：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code2" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 style="font-size:60px;">Heading 1</h1>
+
+<p>You can change the size of a heading with the style attribute, using the font-size property.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor2">查看示例</button>
+                <hr>
+                <h2>标题很重要</h2>
+                <p>
+                        请确保将 <code>heading</code> 标签只用于标题。不要仅仅是为了产生粗体或大号的文本而使用标题。<br>
+                        搜索引擎使用标题为您的网页的结构和内容编制索引。<br>
+                        因为用户可以通过标题来快速浏览您的网页，所以用标题来呈现文档结构是很重要的。<br>
+                        应该将 <code>h1</code> 用作主标题（最重要的），其后是 <code>h2</code>（次重要的），再其次是 <code>h3</code>，以此类推。
+                </p>
+        </article>
+</body>
+
+</html>

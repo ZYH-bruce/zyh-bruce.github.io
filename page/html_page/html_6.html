@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>html学习——文本格式</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./html_1.html">html学习</a></li>
+                        <li><a href="../css_page/css_1.html">css学习</a></li>
+                        <li><a href="../javascript_page/javascript_1.html">javascript学习</a></li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>HTML 文本格式</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <p>
+                        HTML 可定义很多供格式化输出的元素，比如粗体和斜体字。<br>
+                        下面有很多例子，您可以亲自试试： 
+                </p>
+                <hr>
+                <h2>HTML 格式化元素</h2>
+                <p>
+                        格式化元素旨在显示特殊类型的文本：<br>
+                        <code>&lt;b&gt;</code>- 加粗字体<br>
+                        <code>&lt;strong&gt;</code>- 重要文字<br>
+                        <code>&lt;i&gt;</code>- 斜体文字<br>
+                        <code>&lt;em&gt;</code>- 强调文字<br>
+                        <code>&lt;mark&gt;</code>- 标记的文本<br>
+                        <code>&lt;small&gt;</code>- 文字较小<br>
+                        <code>&lt;del&gt;</code>- 删除文本<br>
+                        <code>&lt;ins&gt;</code>- 插入文本
+                </p>
+                <hr>
+                <h2><code>&lt;i&gt;</code> 和 <code>&lt;em&gt;</code> 元素</h2>
+                <p>
+                        <code>&lt;i&gt;</code> 元素定义文本中替代语气或语调的部分。其中的内容通常以斜体显示。<br>
+                        提示：<code>&lt;i&gt;</code> 标签通常用于表示技术术语、来自另一种语言的短语、想法、船名等。<br>
+                        <code>&lt;em&gt;</code> 元素定义强调文本。里面的内容通常以斜体显示。<br>
+                        提示：屏幕阅读器会 <code>&lt;em&gt;</code> 使用重音来强调单词。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This text is normal.</p>
+
+<p><i>This text is italic.</i></p>
+
+<p><em>This text is emphasized.</em></p>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <hr>
+                <h2><code>&lt;small&gt;</code> 元素</h2>
+                <p>
+                        <code>&lt;small&gt;</code> 元素定义较小的文本：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code2" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This is some normal text.</p>
+<p><small>This is some smaller text.</small></p>
+
+</body>
+</html>
+</textarea>
+                <button id="open_editor2">查看示例</button>
+                <hr>
+                <h2><code>&lt;mark&gt;</code> 元素</h2>
+                <p>
+                        <code>&lt;mark&gt;</code> 元素定义应该标记或突出显示的文本：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code3" name="show_code3" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Do not forget to buy <mark>milk</mark> today.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor3">查看示例</button>
+                <hr>
+                <h2><code>&lt;del&gt;</code> 元素</h2>
+                <p>
+                        <code>&lt;del&gt;</code> 元素定义已从文档中删除的文本。浏览器通常会在已删除的文本上划一条线：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code4" name="show_code4" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>My favorite color is <del>blue</del> red.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor4">查看示例</button>
+                <hr>
+                <h2><code>&lt;ins&gt;</code> 元素</h2>
+                <p>
+                        <code>&lt;ins&gt;</code> 元素定义已插入文档的文本。浏览器通常会为插入的文本添加下划线：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code5" name="show_code5" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor5">查看示例</button>
+        </article>
+</body>
+
+</html>

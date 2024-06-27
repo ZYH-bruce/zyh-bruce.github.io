@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>javascript学习——函数</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li><a href="../html_page/html_1.html">html学习</a></li>
+                        <li><a href="../css_page/css_1.html">css学习</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./javascript_1.html">javascript学习</a>
+                        </li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>JavaScript 函数</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <p>
+                        JavaScript 函数是被设计为执行特定任务的代码块。<br>
+                        JavaScript 函数会在某代码调用它时被执行。
+                </p>
+                <hr>
+                <h2>JavaScript 函数语法</h2>
+                <p>
+                        JavaScript 函数通过 function 关键词进行定义，其后是函数名和括号 ()。<br>
+                        函数名可包含字母、数字、下划线和美元符号（规则与变量名相同）。<br>
+                        括号中可以包含用逗号分隔的参数名称：<br>
+                        (参数1，参数 2，...)<br>
+                        函数要执行的代码放在花括号内：{}<br>
+                        函数参数在函数定义中的括号 () 内列出。<br>
+                        函数参数是 函数被调用时接收的值。<br>
+                        在函数内部，参数（参数）表现为局部变量。
+                </p>
+                <hr>
+                <h2>函数调用</h2>
+                <p>
+                        函数中的代码将在其他代码调用该函数时执行：
+                        <ul>
+                                <li>当事件发生时（当用户点击按钮时）</li>
+                                <li>当 JavaScript 代码调用时</li>
+                                <li>自动的（自调用）</li>
+                        </ul>
+                        您将在本教程中学到更多有关函数调用的知识。
+                </p>
+                <hr>
+                <h2>函数返回</h2>
+                <p>
+                        当 JavaScript 到达某个 <code>return</code> 语句时，函数将停止执行。<br>
+                        如果函数是从语句调用的，JavaScript 将“返回”以执行调用语句后的代码。<br>
+                        函数通常会计算一个返回值。返回值会“返回”给“调用者”：<br>
+                        <br>
+                        下面的例子中将计算两个数字的乘积，并返回结果：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+
+<p>Call a function which performs a calculation and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+let x = myFunction(4, 3);
+document.getElementById("demo").innerHTML = x;
+
+function myFunction(a, b) {
+  return a * b;
+}
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <hr>
+                <h2>() 运算符调用函数</h2>
+                <p>
+                        如果 toCelsius 是一个函数， toCelsius 引用的是函数对象，而 toCelsius() 引用的是函数结果。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code2" name="show_code2" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+
+<p>Accessing a function without () returns the function and not the function result:</p>
+<p id="demo"></p>
+
+<script>
+function toCelsius(f) {
+  return (5/9) * (f-32);
+}
+
+let value = toCelsius;
+document.getElementById("demo").innerHTML = value;
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor3">查看示例</button>
+                <hr>
+                <h2>用作变量值的函数</h2>
+                <p>
+                        函数的使用方法与变量一致，在所有类型的公式、赋值和计算中。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code4" name="show_code4" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+<p>Using a function as a variable:</p>
+
+<p id="demo"></p>
+
+<script>
+let text = "The temperature is " + toCelsius(77) + " Celsius.";
+document.getElementById("demo").innerHTML = text;
+
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor4">查看示例</button>
+                <hr>
+                <h2>局部变量</h2>
+                <p>
+                        在 JavaScript 函数中声明的变量，会成为函数的局部变量。<br>
+                        局部变量只能在函数内访问。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code5" name="show_code5" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Functions</h1>
+
+<p>Outside myFunction() carName is undefined.</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+let text = "Outside: " + typeof carName;
+document.getElementById("demo1").innerHTML = text;
+
+function myFunction() {
+  let carName = "Volvo";
+  let text = "Inside: " + typeof carName + " " + carName; 
+  document.getElementById("demo2").innerHTML = text;
+}
+
+myFunction();
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor5">查看示例</button>
+        </article>
+</body>
+
+</html>

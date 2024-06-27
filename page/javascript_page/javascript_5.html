@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>javascript学习——数据类型</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li><a href="../html_page/html_1.html">html学习</a></li>
+                        <li><a href="../css_page/css_1.html">css学习</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./javascript_1.html">javascript学习</a>
+                        </li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>JavaScript 数据类型</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <h2>JavaScript 数据类型</h2>
+                <p>
+                        JavaScript 有 8 种数据类型
+                        <ul>
+                                <li>字符串</li>
+                                <li>数字</li>
+                                <li>大整数</li>
+                                <li>布尔值</li>
+                                <li>未定义</li>
+                                <li>空</li>
+                                <li>符号</li>
+                                <li>对象</li>
+                        </ul>
+                </p>
+                <hr>
+                <h2>数据类型的概念</h2>
+                <p>
+                        在编程过程中，数据类型是重要的概念。<br>
+                        为了能够操作变量，了解数据类型是很重要的。<br>
+                        如果没有数据类型，计算机就无法安全地解决这道题：<br>
+                        <br>
+                        <code>var x = 911 + "Porsche";</code><br>
+                        <br>
+                        给 "Volvo" 加上 911 有意义吗？这么做会发生错误还是会产生一个结果？<br>
+                        JavaScript 会这样处理上面的例子：<br>
+                        <br>
+                        <code>var x = "911" + "Porsche";</code><br>
+                        <br>
+                        当数值和字符串相加时，JavaScript 将把数值视作字符串。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript</h2>
+
+<p>When adding a string and a number, JavaScript will treat the number as a string.</p>
+
+<p id="demo"></p>
+
+<script>
+        var x = "Porsche" + 911;
+        document.getElementById("demo").innerHTML = x;
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <hr>
+                <h2>JavaScript 拥有动态类型</h2>
+                <p>
+                        JavaScript 拥有动态类型。这意味着相同变量可用作不同类型：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code2" name="show_code2" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Data Types</h2>
+
+<p>JavaScript has dynamic types. This means that the same variable can be used to hold different data types:</p>
+
+<p id="demo"></p>
+
+<script>
+        let x;         // Now x is undefined
+        x = 5;         // Now x is a Number
+        x = "John";    // Now x is a String
+
+        document.getElementById("demo").innerHTML = x;
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor2">查看示例</button>
+                <hr>
+                <h2>JavaScript 字符串</h2>
+                <p>
+                        字符串（或文本字符串）是一系列字符，如“John Doe”。<br>
+                        字符串用引号引起来。您可以使用单引号或双引号：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code3" name="show_code3" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Strings</h2>
+
+<p>Strings are written with quotes. You can use single or double quotes:</p>
+
+<p id="demo"></p>
+
+<script>
+        let carName1 = "Volvo XC60";
+        let carName2 = 'Volvo XC60';
+
+        document.getElementById("demo").innerHTML =
+                carName1 + "<br>" +
+                carName2; 
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor3">查看示例</button>
+                <hr>
+                <h2>JavaScript 数字</h2>
+                <p>
+                        所有 JavaScript 数字都存储为十进制数（浮点数）。<br>
+                        数字可以带小数，也可以不带小数：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code4" name="show_code4" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Numbers</h2>
+
+<p>Numbers can be written with, or without decimals:</p>
+
+<p id="demo"></p>
+
+<script>
+        let x1 = 34.00;
+        let x2 = 34;
+        let x3 = 3.14;
+
+        document.getElementById("demo").innerHTML =
+                x1 + "<br>" + x2 + "<br>" + x3;
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor4">查看示例</button>
+                <hr>
+                <h2>JavaScript 布尔值</h2>
+                <p>
+                        布尔值只有两个值：true 或 false。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code5" name="show_code5" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Booleans</h2>
+
+<p>Booleans can have two values: true or false:</p>
+
+<p id="demo"></p>
+
+<script>
+        let x = 5;
+        let y = 5;
+        let z = 6;
+
+        document.getElementById("demo").innerHTML =
+                (x == y) + "<br>" + (x == z);
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor5">查看示例</button>
+                <hr>
+                <h2>JavaScript 数组</h2>
+                <p>
+                        JavaScript 数组用方括号书写。<br>
+                        数组的项目由逗号分隔。<br>
+                        下面的代码声明（创建）了名为 cars 的数组，包含三个项目（汽车品牌）：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code6" name="show_code6" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Array indexes are zero-based, which means the first item is [0].</p>
+
+<p id="demo"></p>
+
+<script>
+        const cars = ["Saab", "Volvo", "BMW"];
+
+        document.getElementById("demo").innerHTML = cars[0];
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor6">查看示例</button>
+                <hr>
+                <h2>JavaScript 对象</h2>
+                <p>
+                        JavaScript 对象用花括号来书写。<br>
+                        对象属性是 name:value 对，由逗号分隔。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code7" name="show_code7" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+
+<p id="demo"></p>
+
+<script>
+        const person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 50,
+                eyeColor: "blue"
+        };
+
+        document.getElementById("demo").innerHTML =
+                person.firstName + " is " + person.age + " years old.";
+</script>
+
+</body>
+</html></textarea>
+                <button id="open_editor7">查看示例</button>
+        </article>
+</body>
+
+</html>

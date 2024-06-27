@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <title>css学习——选择器</title>
+        <link rel="stylesheet" href="../../css/body.css" />
+        <link rel="stylesheet" href="../../css/header.css" />
+        <script src="../../javascript/header.js" defer></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/lib/codemirror.css" />
+        <script src="../../codemirror-5.65.16/lib/codemirror.js"></script>
+        <script src="../../codemirror-5.65.16/addon/selection/selection-pointer.js"></script>
+        <script src="../../codemirror-5.65.16/mode/xml/xml.js"></script>
+        <script src="../../codemirror-5.65.16/mode/javascript/javascript.js"></script>
+        <script src="../../codemirror-5.65.16/mode/css/css.js"></script>
+        <script src="../../codemirror-5.65.16/mode/vbscript/vbscript.js"></script>
+        <link rel="stylesheet" href="../../codemirror-5.65.16/theme/material-darker.css" />
+        <script src="../../codemirror-5.65.16/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../css/show_code.css" />
+        <script src="../../javascript/show_code.js" defer></script>
+        <link rel="stylesheet" href="../../css/switch_up_down_page.css" />
+        <script src="../../javascript/switch_up_down_page.js" defer></script>
+</head>
+
+<body>
+        <header>
+                <ul>
+                        <li><a href="../../index.html">主页</a></li>
+                        <li><a href="../html_page/html_1.html">html学习</a></li>
+                        <li style="box-shadow: inset 0 -4px 0 0 gray;"><a href="./css_1.html">css学习</a></li>
+                        <li><a href="../javascript_page/javascript_1.html">javascript学习</a></li>
+                        <li><a href="../code_edit_page.html">代码运行</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">reference</a></li>
+                </ul>
+        </header>
+        <article id="main">
+                <h1>CSS 选择器</h1>
+                <div class="tutorial_navigation"></div>
+                <hr>
+                <p>
+                        CSS 选择器选择您想要设置样式的 HTML 元素。
+                </p>
+                <hr>
+                <h2>CSS 选择器</h2>
+                <p>
+                        CSS 选择器用于“查找”（或选取）要设置样式的 HTML 元素。<br>
+                        我们可以将 CSS 选择器分为五类：
+                        <ul>
+                                <li>简单选择器（根据名称、id、类来选取元素）</li>
+                                <li>组合器选择器（根据它们之间的特定关系来选取元素）</li>
+                                <li>伪类选择器（根据特定状态选取元素）</li>
+                                <li>伪元素选择器（选取元素的一部分并设置其样式）</li>
+                                <li>属性选择器（根据属性或属性值来选取元素）</li>
+                        </ul>
+                        此页会讲解最基本的 CSS 选择器。
+                </p>
+                <hr>
+                <h2>元素选择器</h2>
+                <p>
+                        元素选择器根据元素名称选择 HTML 元素。<br>
+                        <br>
+                        元素选择器根据元素名称选择 HTML 元素。
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code1" name="show_code1" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  text-align: center;
+  color: red;
+} 
+</style>
+</head>
+<body>
+
+<p>Every paragraph will be affected by the style.</p>
+<p id="para1">Me too!</p>
+<p>And me!</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor1">查看示例</button>
+                <hr>
+                <h2>id 选择器</h2>
+                <p>
+                        id 选择器使用 HTML 元素的 id 属性来选择特定元素。<br>
+                        元素的 id 在页面中是唯一的，因此 id 选择器用于选择一个唯一的元素！<br>
+                        要选择具有特定 id 的元素，请写一个井号（＃），后跟该元素的 id。<br>
+                        <br>
+                        下面 CSS 规则将应用于 id="para1" 的 HTML 元素：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code2" name="show_code2" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#para1 {
+  text-align: center;
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<p id="para1">Hello World!</p>
+<p>This paragraph is not affected by the style.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor2">查看示例</button>
+                <hr>
+                <h2>类选择器</h2>
+                <p>
+                        类选择器选择有特定 class 属性的 HTML 元素。<br>
+                        如需选择拥有特定 class 的元素，请写一个句点（.）字符，后面跟类名。<br>
+                        <br>
+                        在下面的例子中，所有带有 class="center" 的 HTML 元素将为红色且居中对齐：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code3" name="show_code3" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+  text-align: center;
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<h1 class="center">Red and center-aligned heading</h1>
+<p class="center">Red and center-aligned paragraph.</p> 
+
+</body>
+</html></textarea>
+                <button id="open_editor3">查看示例</button>
+                <hr>
+                <h2>通用选择器</h2>
+                <p>
+                        通用选择器（*）选择页面上的所有的 HTML 元素。<br>
+                        <br>
+                        下面的 CSS 规则会影响页面上的每个 HTML 元素：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code4" name="show_code4" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  text-align: center;
+  color: blue;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello world!</h1>
+
+<p>Every element on the page will be affected by the style.</p>
+<p id="para1">Me too!</p>
+<p>And me!</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor4">查看示例</button>
+                <hr>
+                <h2>分组选择器</h2>
+                <p>
+                        分组选择器选取所有具有相同样式定义的 HTML 元素。<br>
+                        请看下面的 CSS 代码（h1、h2 和 p 元素具有相同的样式定义）：
+                </p>
+
+                <textarea id="show_code5" name="show_code5" autocomplete="off">
+<style>
+h1 {
+  text-align: center;
+  color: red;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+p {
+  text-align: center;
+  color: red;
+}
+</style></textarea>
+                <p>
+                        最好对选择器进行分组，以最大程度地缩减代码。<br>
+                        如需对选择器进行分组，请用逗号来分隔每个选择器。<br>
+                        <br>
+                        在这个例子中，我们对上述代码中的选择器进行分组：
+                </p>
+                <h3>例子</h3>
+                <textarea id="show_code6" name="show_code6" autocomplete="off">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+<h2>Smaller heading!</h2>
+<p>This is a paragraph.</p>
+
+</body>
+</html></textarea>
+                <button id="open_editor6">查看示例</button>
+        </article>
+</body>
+
+</html>
